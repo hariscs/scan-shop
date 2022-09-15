@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from '../../Components/Button';
 import { useNavigate } from 'react-router-dom';
 import './style.scss';
@@ -13,7 +13,6 @@ const AddProduct = () => {
   const [furnitureWidth, setFurnitureWidth] = useState('');
   const [furnitureLength, setFurnitureLength] = useState('');
   const [optionValue, setOptionValue] = useState('typeswitcher');
-  // const [productData, setProductData] = useState('');
 
   const navigate = useNavigate();
   const handleFormData = () => {
@@ -55,7 +54,7 @@ const AddProduct = () => {
         }
       );
       if (res.ok) {
-        window.open('/', '_self');
+        window.open('https://scan-shop.netlify.app/', '_self');
       }
     } catch (error) {
       console.log(error);
