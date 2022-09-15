@@ -53,9 +53,7 @@ const AddProduct = () => {
           mode: 'no-cors',
         }
       );
-      if (res.ok) {
-        window.open('https://scan-shop.netlify.app/', '_self');
-      }
+      window.open('/', '_self');
     } catch (error) {
       console.log(error);
     }
