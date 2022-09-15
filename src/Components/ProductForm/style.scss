@@ -1,0 +1,18 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input,
+    select {
+      padding: 0.2rem 0.5rem;
+      width: 60%;
+      margin-bottom: 1rem;
+    }
+  }
+}

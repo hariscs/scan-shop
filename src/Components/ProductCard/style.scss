@@ -1,0 +1,21 @@
+.card {
+  border: 1px solid red;
+  width: 200px;
+  height: 150px;
+  padding: 1rem;
+  border-radius: 5px;
+
+  input {
+    cursor: pointer;
+  }
+
+  &__info {
+    text-align: center;
+    font-size: 14px;
+
+    &--title {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}

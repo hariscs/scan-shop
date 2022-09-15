@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+
+  &__btns {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.products {
+  margin: 2rem 0;
+  &__cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
