@@ -14,30 +14,64 @@ const AddProduct = () => {
   const [furnitureLength, setFurnitureLength] = useState('');
   const [optionValue, setOptionValue] = useState('typeswitcher');
 
+  const [error, setError] = useState(false);
+
   const navigate = useNavigate();
+  const typeValidation = () => {
+    if (optionValue) {
+      if (optionValue === 'dvd') {
+        if (dvdSize) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      if (optionValue === 'book') {
+        if (bookWeight) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      if (optionValue === 'furniture') {
+        if (furnitureHeight && furnitureLength && furnitureWidth) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    } else {
+      return false;
+    }
+  };
   const handleFormData = () => {
-    const productAttributes =
-      optionValue === 'dvd'
-        ? { dvd: [{ size: dvdSize }] }
-        : optionValue === 'book'
-        ? { book: [{ weight: bookWeight }] }
-        : {
-            furniture: [
-              { height: furnitureHeight },
-              { width: furnitureWidth },
-              { length: furnitureLength },
-            ],
-          };
+    if (productSku && productName && productPrice && typeValidation()) {
+      const productAttributes =
+        optionValue === 'dvd'
+          ? { dvd: [{ size: dvdSize }] }
+          : optionValue === 'book'
+          ? { book: [{ weight: bookWeight }] }
+          : {
+              furniture: [
+                { height: furnitureHeight },
+                { width: furnitureWidth },
+                { length: furnitureLength },
+              ],
+            };
 
-    const productData = {
-      sku: productSku,
-      name: productName,
-      price: productPrice,
-      productType: optionValue,
-      attributes: productAttributes,
-    };
+      const productData = {
+        sku: productSku,
+        name: productName,
+        price: productPrice,
+        productType: optionValue,
+        attributes: productAttributes,
+      };
 
-    postData(productData);
+      postData(productData);
+      setError(false);
+    } else {
+      setError(true);
+    }
   };
 
   const postData = async (productData) => {
@@ -68,17 +102,21 @@ const AddProduct = () => {
           <Button onClick={() => navigate('/')} children='Cancel' />
         </div>
       </div>
+
       <div className='product__form'>
-        {/* <ProductForm /> */}
         <form id='form' className='form'>
           <div className='form__group'>
+            {error && <p className=''>Error</p>}
             <label htmlFor='sku'>SKU</label>
             <input
               type='text'
               name='sku'
               id='sku'
               value={productSku}
-              onChange={(e) => setProductSku(e?.target?.value)}
+              onChange={(e) => {
+                setProductSku(e?.target?.value);
+                setError(false);
+              }}
             />
           </div>
           <div className='form__group'>
