@@ -115,7 +115,6 @@ const AddProduct = () => {
               value={productSku}
               onChange={(e) => {
                 setProductSku(e?.target?.value);
-                setError(false);
               }}
               placeholder='sku'
             />
