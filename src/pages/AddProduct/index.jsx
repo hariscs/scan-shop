@@ -113,9 +113,7 @@ const AddProduct = () => {
               name='sku'
               id='sku'
               value={productSku}
-              onChange={(e) => {
-                setProductSku(e?.target?.value);
-              }}
+              onChange={(e) => setProductSku(e?.target?.value)}
               placeholder='sku'
             />
           </div>
