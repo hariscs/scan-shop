@@ -104,7 +104,7 @@ const AddProduct = () => {
       </div>
 
       <div className='product__form'>
-        <form id='form' className='form'>
+        <form id='product__form' className='form'>
           {error && <p className='error'>Please, submit required data</p>}
           <div className='form__group'>
             <label htmlFor='sku'>SKU</label>
