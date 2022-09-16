@@ -78,7 +78,7 @@ const AddProduct = () => {
               name='sku'
               id='sku'
               value={productSku}
-              onChange={(e) => setProductSku(e.target.value)}
+              onChange={(e) => setProductSku(e?.target?.value)}
             />
           </div>
           <div className='form__group'>
@@ -88,7 +88,7 @@ const AddProduct = () => {
               name='name'
               id='name'
               value={productName}
-              onChange={(e) => setProductName(e.target.value)}
+              onChange={(e) => setProductName(e?.target?.value)}
             />
           </div>
           <div className='form__group'>
@@ -98,7 +98,7 @@ const AddProduct = () => {
               name='price'
               id='price'
               value={productPrice}
-              onChange={(e) => setProductPrice(e.target.value)}
+              onChange={(e) => setProductPrice(e?.target?.value)}
             />
           </div>
           <div className='form__group'>
@@ -107,7 +107,7 @@ const AddProduct = () => {
               name='type'
               id='productType'
               value={optionValue}
-              onChange={(e) => setOptionValue(e.target.value)}
+              onChange={(e) => setOptionValue(e?.target?.value)}
             >
               <option value='typeswitcher' disabled>
                 Type Switcher
@@ -131,7 +131,7 @@ const AddProduct = () => {
                 name='size'
                 id='size'
                 value={dvdSize}
-                onChange={(e) => setdvdSize(e.target.value)}
+                onChange={(e) => setdvdSize(e?.target?.value)}
               />
             </div>
           ) : optionValue === 'book' ? (
@@ -142,7 +142,7 @@ const AddProduct = () => {
                 name='weight'
                 id='weight'
                 value={bookWeight}
-                onChange={(e) => setBookWeight(e.target.value)}
+                onChange={(e) => setBookWeight(e?.target?.value)}
               />
             </div>
           ) : optionValue === 'furniture' ? (
@@ -154,7 +154,7 @@ const AddProduct = () => {
                   name='height'
                   id='height'
                   value={furnitureHeight}
-                  onChange={(e) => setFurnitureHeight(e.target.value)}
+                  onChange={(e) => setFurnitureHeight(e?.target?.value)}
                 />
               </div>
               <div className='form__group'>
@@ -164,7 +164,7 @@ const AddProduct = () => {
                   name='width'
                   id='width'
                   value={furnitureWidth}
-                  onChange={(e) => setFurnitureWidth(e.target.value)}
+                  onChange={(e) => setFurnitureWidth(e?.target?.value)}
                 />
               </div>
               <div className='form__group'>
@@ -174,7 +174,7 @@ const AddProduct = () => {
                   name='length'
                   id='length'
                   value={furnitureLength}
-                  onChange={(e) => setFurnitureLength(e.target.value)}
+                  onChange={(e) => setFurnitureLength(e?.target?.value)}
                 />
               </div>
             </div>
