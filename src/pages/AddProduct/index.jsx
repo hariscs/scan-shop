@@ -98,7 +98,7 @@ const AddProduct = () => {
       <div className='product__header'>
         <h2 className='product__title'>Product Add</h2>
         <div className='product__btns'>
-          <Button type='submit' onClick={handleFormData} children='Add' />
+          <Button type='submit' onClick={handleFormData} children='Save' />
           <Button onClick={() => navigate('/')} children='Cancel' />
         </div>
       </div>
