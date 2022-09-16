@@ -105,8 +105,8 @@ const AddProduct = () => {
 
       <div className='product__form'>
         <form id='form' className='form'>
+          {error && <p className='error'>Please, submit required data</p>}
           <div className='form__group'>
-            {error && <p className=''>Error</p>}
             <label htmlFor='sku'>SKU</label>
             <input
               type='text'
@@ -117,6 +117,7 @@ const AddProduct = () => {
                 setProductSku(e?.target?.value);
                 setError(false);
               }}
+              placeholder='sku'
             />
           </div>
           <div className='form__group'>
@@ -127,6 +128,7 @@ const AddProduct = () => {
               id='name'
               value={productName}
               onChange={(e) => setProductName(e?.target?.value)}
+              placeholder='name'
             />
           </div>
           <div className='form__group'>
@@ -137,6 +139,7 @@ const AddProduct = () => {
               id='price'
               value={productPrice}
               onChange={(e) => setProductPrice(e?.target?.value)}
+              placeholder='price'
             />
           </div>
           <div className='form__group'>
@@ -161,28 +164,41 @@ const AddProduct = () => {
               </option>
             </select>
           </div>
+          {error && (
+            <span className='error'>
+              Please, provide the data of indicated type
+            </span>
+          )}
           {optionValue === 'dvd' ? (
-            <div className='form__group'>
-              <label htmlFor='size'>Size (MB)</label>
-              <input
-                type='number'
-                name='size'
-                id='size'
-                value={dvdSize}
-                onChange={(e) => setdvdSize(e?.target?.value)}
-              />
-            </div>
+            <>
+              <div className='form__group'>
+                <label htmlFor='size'>Size (MB)</label>
+                <input
+                  type='number'
+                  name='size'
+                  id='size'
+                  value={dvdSize}
+                  onChange={(e) => setdvdSize(e?.target?.value)}
+                  placeholder='size'
+                />
+              </div>
+              <p className='form__desc'>Please Provide Size</p>
+            </>
           ) : optionValue === 'book' ? (
-            <div className='form__group'>
-              <label htmlFor='weight'>Weight (KG)</label>
-              <input
-                type='number'
-                name='weight'
-                id='weight'
-                value={bookWeight}
-                onChange={(e) => setBookWeight(e?.target?.value)}
-              />
-            </div>
+            <>
+              <div className='form__group'>
+                <label htmlFor='weight'>Weight (KG)</label>
+                <input
+                  type='number'
+                  name='weight'
+                  id='weight'
+                  value={bookWeight}
+                  onChange={(e) => setBookWeight(e?.target?.value)}
+                  placeholder='weight'
+                />
+              </div>
+              <p className='form__desc'>Please Provide Weight</p>
+            </>
           ) : optionValue === 'furniture' ? (
             <div className='form__group--furniture'>
               <div className='form__group'>
@@ -193,6 +209,7 @@ const AddProduct = () => {
                   id='height'
                   value={furnitureHeight}
                   onChange={(e) => setFurnitureHeight(e?.target?.value)}
+                  placeholder='height'
                 />
               </div>
               <div className='form__group'>
@@ -203,17 +220,24 @@ const AddProduct = () => {
                   id='width'
                   value={furnitureWidth}
                   onChange={(e) => setFurnitureWidth(e?.target?.value)}
+                  placeholder='width'
                 />
               </div>
-              <div className='form__group'>
-                <label htmlFor='length'>length (CM)</label>
-                <input
-                  type='number'
-                  name='length'
-                  id='length'
-                  value={furnitureLength}
-                  onChange={(e) => setFurnitureLength(e?.target?.value)}
-                />
+              <div>
+                <div className='form__group'>
+                  <label htmlFor='length'>length (CM)</label>
+                  <input
+                    type='number'
+                    name='length'
+                    id='length'
+                    value={furnitureLength}
+                    onChange={(e) => setFurnitureLength(e?.target?.value)}
+                    placeholder='length'
+                  />
+                </div>
+                <p className='form__desc'>
+                  Please Provide dimensions in HxLxW format
+                </p>
               </div>
             </div>
           ) : null}

@@ -24,6 +24,7 @@ const ProductCard = ({ productData, toggleProducts }) => {
           name='checkproduct'
           onChange={() => toggleProducts(id)}
           id='checkproduct'
+          className='delete-checkbox'
         />
       </div>
       {/* product card info */}

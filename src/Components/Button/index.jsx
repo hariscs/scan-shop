@@ -1,12 +1,8 @@
 import './style.scss';
 
-const Button = ({ onClick, children, btnStyle, type }) => {
+const Button = ({ onClick, children, type, pid }) => {
   return (
-    <button
-      onClick={onClick}
-      type={type}
-      className={`btn ${btnStyle ? 'btn__secondary' : 'btn__primary'}`}
-    >
+    <button onClick={onClick} type={type} className='btn' id={pid}>
       {children}
     </button>
   );

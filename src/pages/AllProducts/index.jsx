@@ -53,7 +53,9 @@ const AllProducts = () => {
         <h1 className='header__title'>Product List</h1>
         <div className='header__btns'>
           <Button onClick={() => navigate('/addproduct')}>ADD</Button>
-          <Button onClick={deleteProducts}>MASS DELETE</Button>
+          <Button onClick={deleteProducts} pid='delete-product-btn'>
+            MASS DELETE
+          </Button>
         </div>
       </header>
       <main className='products'>
